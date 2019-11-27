@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './NavBar';
 import { Chart } from "react-google-charts"
+import ImageComponent from './ImageComponent'
 
 class App extends Component{
   constructor() {
@@ -23,6 +24,7 @@ class App extends Component{
           onToggle={() => this.handleToggle()}
           open={this.state.open}
         />
+        <ImageComponent/>
         {/* <main className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
