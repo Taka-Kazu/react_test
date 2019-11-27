@@ -5,7 +5,7 @@ class ImageComponent extends Component{
         super(props);
         this.state = {
             ws: null,
-            messages: [],
+            message: "",
             server_address: null
         };
     }
@@ -27,18 +27,18 @@ class ImageComponent extends Component{
         // window.scrollTo(0, node.scrollHeight);
     }
     handleMessage(event) {
-        console.log(event.data);
-        let message = event.data;
-        // let message = JSON.parse(event.data);
-        this.state.messages[0] = message;
+        let message = JSON.parse(event.data);
+        console.log(message['image'].length)
+        let img = new Image();
+        img.src = "data:image/jpeg;base64," + message['image']
+        document.getElementById('img1').src = img.src;
         this.setState({
-            messages: this.state.messages
+            message: message['image'].length
         });
     }
     render() {
-        console.log(this.state)
         return(
-            <div>{this.state.messages}</div>
+            <img id="img1" width="640" height="480"></img>
         )
     }
 

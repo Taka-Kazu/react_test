@@ -24,7 +24,9 @@ class App extends Component{
           onToggle={() => this.handleToggle()}
           open={this.state.open}
         />
-        <ImageComponent/>
+        <div className="Img-style">
+            <ImageComponent/>
+        </div>
         {/* <main className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
